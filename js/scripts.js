@@ -24,6 +24,13 @@ for (let i = 0; i < pokemonList.length; i++) {
     let pokemon = pokemonList[i];
     let output = pokemon.name + " (height: " + pokemon.height + ")";
     
+    // Check if the height is above a certain value to highlight special Pokémon
+    
+    if (pokemon.height > 6) {
+        output += " - Wow, that's big!";
+    }
+    
     // Output the Pokémon information to the DOM
+
     document.write(output + "<br>");
 }
