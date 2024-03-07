@@ -1,3 +1,5 @@
+// Define an array of Pokémon objects
+
 let pokemonList = [
     {
         name: "Bulbasaur",
@@ -15,3 +17,13 @@ let pokemonList = [
         types: ['water']
     }
 ];
+
+// Iterate over each item in the pokemonList array
+
+for (let i = 0; i < pokemonList.length; i++) {
+    let pokemon = pokemonList[i];
+    let output = pokemon.name + " (height: " + pokemon.height + ")";
+    
+    // Output the Pokémon information to the DOM
+    document.write(output + "<br>");
+}
