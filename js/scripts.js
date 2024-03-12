@@ -17,6 +17,10 @@ let pokemonRepository = (function() {
         }
     ];
 
+    function showDetails(pokemon){
+        console.log()
+       }; 
+
     function addListItem(pokemon) {
         let element = document.querySelector(".pokemon-list");
         let listItem = document.createElement("li");
@@ -24,7 +28,8 @@ let pokemonRepository = (function() {
         button.innerText = pokemon.name;
         listItem.appendChild(button);
         element.appendChild(listItem);
-        }
+        button.addEventListener('click', showDetails);
+  };
 
       return {
         getAll: function () {
