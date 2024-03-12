@@ -17,30 +17,34 @@ let pokemonRepository = (function() {
         }
     ];
 
-    function add(pokemon){
-        if (typeof pokemon === 'object') {
-            pokemonList.push(pokemon);  
-        }  
-    }
-    function getAll(){
-        return pokemonList;
-    }
-    return{
-        add:add,
-        getAll: getAll
-    }
-    })();
+    function addListItem(pokemon) {
+        let element = document.querySelector(".pokemon-list");
+        let listItem = document.createElement("li");
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        listItem.appendChild(button);
+        element.appendChild(listItem);
+        }
 
-// add a new object(pokemon) to the pokemonList
-pokemonRepository.add({
-    name: 'Kakuna', height: 2.00, type: ['Bug', 'Poison']
-});
-// print the list of names from pokemonList and coresponding height of that name 
-pokemonRepository.getAll().forEach(function (pokemon) {
-    // print a message if the height is bigger than 5 
-    if (pokemon.height > 5) {
-        document.write('<p>', pokemon.name + ' - ' + pokemon.height + ' Wow, that\'s big!; </p>');
-    } else {
-        document.write('<p>', pokemon.name + ' - ' + pokemon.height + '; </p>');
-    }
-});
+      return {
+        getAll: function () {
+          return pokemonList;
+        },
+
+        add: function (item) {
+            pokemonList.push(item);
+        },
+        addListItem,
+        };
+
+      })();
+
+     console.log(pokemonRepository.getAll());
+
+     console.log(
+       pokemonRepository.add({ name: "Rattata 2", height: 0.3, type: ["field"] })
+     );
+  
+     pokemonRepository.getAll().forEach(function (pokemon) {
+        pokemonRepository.addListItem(pokemon);
+      });
