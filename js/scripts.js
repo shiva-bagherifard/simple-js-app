@@ -2,7 +2,9 @@ let pokemonRepository = (function() {
     let pokemonList = [];
 
     function showDetails(pokemon) {
-        console.log(pokemon.name);
+        pokemonRepository.loadDetails(pokemon).then(function() {
+            console.log(pokemon);
+        });
     }
 
     function addListItem(pokemon) {
