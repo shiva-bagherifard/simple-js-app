@@ -1,4 +1,9 @@
-button {
+.pokemon-list {
+  margin-top: 100px;
+}
+
+
+/* button {
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -81,4 +86,4 @@ ul {
   margin: auto;
   height: 50px;
   width: 50px;
-}
+} */
